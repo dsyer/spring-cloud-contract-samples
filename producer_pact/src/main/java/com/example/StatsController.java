@@ -20,7 +20,7 @@ public class StatsController {
 	@RequestMapping(value = "/stats",
 			method= RequestMethod.POST,
 			consumes="application/json",
-			produces="application/json")
+			produces="application/json;charset=UTF-8")
 	public StatsResponse check(@RequestBody StatsRequest request) {
 		int bottles = this.statsService.findBottlesByName(request.getName());
 		String text = String.format("Dear %s thanks for your interested in drinking beer", request.getName());
